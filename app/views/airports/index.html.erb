@@ -1,0 +1,35 @@
+<br><br>
+<%= form_with url: "/airports", method: :get do |form| %>
+  <%= form.label :departure_airport_id %>
+  <%= select_tag(:departure_airport_id, options_for_select(@airport_options)) %>
+  <br><br>
+  <%= form.label :arrival_airport_id %>
+  <%= select_tag(:arrival_airport_id, options_for_select(@airport_options)) %>
+  <br><br>
+  <%= form.label :pax %>
+  <%= select_tag(:pax, options_for_select(1..4)) %>
+  <br><br>
+  <%= form.label :start, "Departing date" %>
+  <%= select_tag(:start, options_for_select(@date_options)) %>
+  <br><br>
+  <%= form.submit "Search for the flight" %>
+<% end %>
+
+<br><br>
+
+<% unless @selected_flight.nil? %>
+  <% if @selected_flight.any? %>
+    <%= form_with url: "/bookings/new", method: :get do |form| %>
+      <% @selected_flight.each do |flight| %>
+        <%= flight.start.strftime("%B %d, %Y, %H:%M") %>
+        <br>
+        For <%= flight.duration/60 %> hours
+        <br><br>
+        <%= radio_button_tag(:flight_id, flight.id) %>
+        <br><br>
+      <% end %>
+      <%= hidden_field_tag :pax, params[:pax] %>
+      <%= form.submit "Continue to passenger details" %>
+    <% end %>
+  <% end %>
+<% end %>

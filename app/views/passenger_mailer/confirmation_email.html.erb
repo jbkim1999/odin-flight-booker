@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Dear <%= @passenger.name %>,</h1>
+    <p>
+      You have successfully made booking from <%= @booking.flight.departure_airport %> to <%= @booking.flight.arrival_airport %>.
+    </p>
+    <p>
+      To view the details of your booking information, please click on this link: <%= @url %>.
+    </p>
+    <p>We wish you have a pleasnt journey.</p>
+  </body>
+</html>

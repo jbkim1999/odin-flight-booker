@@ -1,0 +1,17 @@
+<br>
+<%= form_with model: @booking do |form| %>
+  <%= form.hidden_field :flight_id, value: params[:flight_id] %>
+  <% params[:pax].to_i.times do %>
+    <!-- @booking.passengers."build" absolutely necessary here!!! -->
+    <!-- form.fields_for :passenger"s" important as well -->
+    <%= form.fields_for :passengers, @booking.passengers.build do |passenger_form| %>
+      <%= passenger_form.label :name %>
+      <%= passenger_form.text_field :name %>
+      <br><br>
+      <%= passenger_form.label :email %>
+      <%= passenger_form.text_field :email %>
+      <br><br>
+    <% end %>
+  <% end %>
+  <%= form.submit %>
+<% end %>
