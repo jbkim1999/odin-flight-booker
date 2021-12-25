@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Part of The Odin Project assignment.
 
-Things you may want to cover:
+Things I learned:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+https://grove-hotel-c4b.notion.site/Project-Flight-Booker-e4d7a05a7e2249d2b8f0c06ee1c7286d
