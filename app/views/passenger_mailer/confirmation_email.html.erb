@@ -6,11 +6,11 @@
   <body>
     <h1>Dear <%= @passenger.name %>,</h1>
     <p>
-      You have successfully made booking from <%= @booking.flight.departure_airport %> to <%= @booking.flight.arrival_airport %>.
+      You have successfully made booking from <%= @booking.flight.departure_airport.code %> to <%= @booking.flight.arrival_airport.code %>.
     </p>
     <p>
       To view the details of your booking information, please click on this link: <%= @url %>.
     </p>
-    <p>We wish you have a pleasnt journey.</p>
+    <p>We wish you have a pleasant journey.</p>
   </body>
 </html>
